@@ -167,6 +167,7 @@ config SCSI_UFS_BSG
 config SCSI_UFS_EXYNOS
 	tristate "EXYNOS UFS Host Controller Driver"
 	depends on SCSI_UFSHCD && SCSI_UFSHCD_PLATFORM
+	select BLK_SUB_PAGE_SEGMENTS if PAGE_SIZE > 4096
 	help
 	  This selects the EXYNOS UFS host controller driver which
 	  run with Exynos SoCs.
