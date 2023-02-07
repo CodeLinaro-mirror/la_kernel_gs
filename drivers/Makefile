@@ -119,6 +119,7 @@ obj-y				+= power/
 obj-$(CONFIG_HWMON)		+= hwmon/
 obj-$(CONFIG_THERMAL)		+= thermal/
 obj-$(CONFIG_TRUSTY)		+= trusty/
+obj-$(CONFIG_HW_ARM64_CPU_INFO)	+= hw_arm64/
 obj-$(CONFIG_WATCHDOG)		+= watchdog/
 obj-$(CONFIG_MD)		+= md/
 obj-$(CONFIG_BT)		+= bluetooth/
