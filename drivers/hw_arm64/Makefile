@@ -7,4 +7,4 @@
 
 obj-$(CONFIG_HW_ARM64_CPU_INFO) += arm64-cpu-info.o
 
-arm64-cpu-info-objs		+= arm64-cpu.o arm64-mm.o
+arm64-cpu-info-objs		+= arm64-cache.o arm64-cpu.o arm64-mm.o

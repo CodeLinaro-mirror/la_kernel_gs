@@ -14,6 +14,7 @@
 #include <linux/printk.h>
 #include <linux/types.h>
 
+#include "arm64-cache.h"
 #include "arm64-mm.h"
 
 static int __init arm64info_init(void)
@@ -22,6 +23,8 @@ static int __init arm64info_init(void)
 	mm_pr_aa64mmfr0_el1_reg();
 	mm_pr_sctlr_el1_reg();
 	mm_pr_tcr_el1_reg();
+
+	cache_print_clidr_el1();
 
 	return 0;
 }
