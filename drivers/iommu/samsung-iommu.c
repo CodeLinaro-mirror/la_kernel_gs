@@ -1174,6 +1174,8 @@ static int samsung_sysmmu_aux_get_pasid(struct iommu_domain *dom, struct device 
 
 static bool samsung_sysmmu_dev_has_feat(struct device *dev, enum iommu_dev_features f)
 {
+	return false;
+/*
 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
 	struct sysmmu_clientdata *client;
 	struct sysmmu_drvdata *drvdata;
@@ -1189,6 +1191,7 @@ static bool samsung_sysmmu_dev_has_feat(struct device *dev, enum iommu_dev_featu
 		return false;
 	drvdata = client->sysmmus[0];
 	return !!drvdata->has_vcr;
+	*/
 }
 
 static bool samsung_sysmmu_dev_feat_enabled(struct device *dev, enum iommu_dev_features f)
