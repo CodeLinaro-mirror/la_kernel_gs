@@ -1,0 +1,12 @@
+POST_DEFCONFIG_CMDS="${POST_DEFCONFIG_CMDS} && update_16k_config"
+
+function update_16k_config() {
+  ${KERNEL_DIR}/scripts/config --file ${OUT_DIR}/.config \
+    -e CONFIG_ARM64_16K_PAGES \
+    -e CONFIG_ARM64_VA_BITS_36 \
+    -d CONFIG_ARM64_VA_BITS_48 \
+    --set-val CONFIG_ARM64_VA_BITS 36
+  (cd ${OUT_DIR} && \
+   make O=${OUT_DIR} "${TOOL_ARGS[@]}" ${MAKE_ARGS} olddefconfig)
+}
+
